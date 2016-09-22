@@ -43,7 +43,8 @@ In your template, use the component directive:
 
 Import the IMultiSelectSettings and IMultiSelectTexts interfaces to enable/override settings and text strings:
 ```js
-private selectedOptions: number[] = [1, 2]; // Default selection
+private selectedOptions: Array<IMultiSelectOption> = Array<IMultiSelectOption>({ id: 1, name: 'Option 1' },
+        { id: 2, name: 'Option 2' }); // Default selection
 
 private mySettings: IMultiSelectSettings = {
     pullRight: false,
@@ -69,7 +70,7 @@ private myTexts: IMultiSelectTexts = {
 ```
 
 ```html
-<ss-multiselect-dropdown [options]="mySettings" [texts]="myTexts" [settings]="mySettings" [(ngModel)]="selectedOptions"></ss-multiselect-dropdown>
+<ss-multiselect-dropdown [options]="myOptions" [texts]="myTexts" [settings]="mySettings" [(ngModel)]="selectedOptions"></ss-multiselect-dropdown>
 ```
 
 ## Developing
